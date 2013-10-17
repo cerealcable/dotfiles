@@ -1,0 +1,34 @@
+#!/bin/bash
+
+OPTIONS="--dpd-idle 0"
+
+if [[ $1 == "" ]]
+then
+	echo -n "Select a VPN to connect to [1509 Callis]: "
+	read vpn
+	vpn="$(echo $vpn | tr '[:upper:]' '[:lower:]')"
+else
+	vpn="$(echo $1 | tr '[:upper:]' '[:lower:]')"
+fi
+
+if [[ $vpn == "1509" ]]
+then
+	echo Connecting to 1509 VPN
+	sudo vpnc --ifname tun1590 $OPTIONS ~/.vpnc/1509
+	exitCode=$?
+	if [[ $exitCode -ne 0 ]]
+	then
+		echo "Failed to connect (exit code $exitCode)"
+	fi
+elif [[ $vpn == "callis" ]]
+then
+	echo Connecting to Callis Office VPN
+	sudo vpnc --ifname tunCallis $OPTIONS ~/.vpnc/callis
+	exitCode=$?
+	if [[ $exitCode -ne 0 ]]
+	then
+		echo "Failed to connect (exit code $exitCode)"
+	fi
+else
+	echo No VPN found to connect to!
+fi
