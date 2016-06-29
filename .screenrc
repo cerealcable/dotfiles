@@ -12,3 +12,10 @@ hardstatus string '%{= kG}[%{R}%H%{g}][%{B}%w %=%{kG}][%{R}%l%{g}][%{B}%c%{g}]'
 # # so that text in screen will go into the xterm's scrollback buffer:
 termcapinfo xterm* ti@:te@
 altscreen on
+
+# Scrollback
+defscrollback 32000
+
+# UTF-8
+defutf8 on
+
