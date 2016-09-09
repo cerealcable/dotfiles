@@ -1,5 +1,5 @@
 # Load files from Projects
-SCREEN_FILES=`ls -a ~/Projects/*/.screenrc-*`
+SCREEN_FILES=`ls -a ~/Projects/*/.screenrc-* ~/.screenrc-*`
 for FILE in $SCREEN_FILES;
 do
         NAME=`echo $FILE | rev | cut -d- -f1 | rev`;
