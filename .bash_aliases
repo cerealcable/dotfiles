@@ -8,4 +8,4 @@ done
 
 # Static aliases
 alias ssh-adtran='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss'
-
+alias tv='terminal_velocity'

@@ -23,3 +23,6 @@ export LESS_TERMCAP_md=$ORANGE
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
+
+# PATH
+export PATH=$PATH:~/.local/bin
