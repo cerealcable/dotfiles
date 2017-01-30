@@ -25,3 +25,6 @@ alias ll='ls -alF'
 #alias mgrep=' find $1 \( -iname "Rules*" -o -iname "make*" -o -iname "*.inc" \) -print0 | xargs -P8 -0 grep -n'
 #alias pygrep='find $1 \( -iname "*.py" \) -print0 | xargs -P8 -0 grep -n'
 #alias rgrep=' find $1 \( -iname "*.rb" \) -print0 | xargs -P8 -0 grep -n' 
+
+# LXC
+lxcsh () { lxc exec $1 -- /bin/bash; }
