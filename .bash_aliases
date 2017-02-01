@@ -29,3 +29,14 @@ alias ll='ls -alF'
 
 # LXC
 lxcsh () { lxc exec $1 -- /bin/bash; }
+lxc-apt-update () {
+    running="$(lxc list -c ns | awk '!/NAME/{ if ( $4 == "RUNNING" ) print $2}')"
+    for container in $running
+    do
+        echo "Updating Ubuntu LXD Container \"$container\"...";
+        lxc exec $container -- /bin/bash -c "apt -qq update";
+        lxc exec $container -- /bin/bash -c "apt -qq -y full-upgrade";
+        lxc exec $container -- /bin/bash -c "apt -qq -y autoremove --purge";
+        lxc exec $container -- /bin/bash -c "apt -qq -y clean";
+    done
+}
