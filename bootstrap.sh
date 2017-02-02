@@ -11,6 +11,7 @@ function doIt() {
           --exclude "bootstrap.sh" \
           --exclude "README.md" \
           --exclude "LICENSE-MIT.txt" \
+          --exclude "requirements-user.txt" \
           -avh --no-perms . ~;
     pip install --user -r requirements-user.txt
     source ~/.bash_profile;
