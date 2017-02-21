@@ -8,6 +8,7 @@ done
 
 # Static aliases
 alias ssh-adtran='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss'
+alias scp-adtran='scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-dss'
 alias tv='terminal_velocity'
 alias hm='history | grep make_image'
 
