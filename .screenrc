@@ -19,3 +19,6 @@ defscrollback 32000
 # UTF-8
 defutf8 on
 
+# Bell
+vbell off
+vbell_msg ""
