@@ -14,6 +14,9 @@ export HISTTIMEFORMAT='%F %T '
 # Store history immediately
 export PROMPT_COMMAND='history -a' 
 
+# Trim prompt
+export PROMPT_DIRTRIM=2
+
 # Prefer US English and use UTF-8
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
