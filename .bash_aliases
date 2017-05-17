@@ -18,9 +18,9 @@ alias la='ls -A'
 alias ll='ls -alF'
 
 # grep
-#alias egrep='egrep --color=auto'
-#alias fgrep='fgrep --color=auto'
-#alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
 #alias cgrep='find $1 \( -iname "*.H" -o -iname "*.C" \) -print0 | xargs -P8 -0 grep -n'
 #alias cppgrep='find $1 \( -iname "*.CPP" -o -iname "*.CC" -o -iname "*.H" -o -iname "*.HPP" \) -print0 | xargs -P8 -0 grep -n'
 #alias hgrep=' find $1 \( -iname "*.H" -o -iname "*.HPP" \) -print0 | xargs -P8 -0 grep -n'
