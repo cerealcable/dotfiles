@@ -23,16 +23,9 @@ done
 git pull origin master;
 
 function doIt() {
-    rsync --exclude ".git/" \
-          --exclude ".DS_Store" \
-          --exclude ".osx" \
-          --exclude "bootstrap.sh" \
-          --exclude "README.md" \
-          --exclude "LICENSE-MIT.txt" \
-          --exclude "requirements-user.txt" \
-          --exclude "envs" \
+    rsync --exclude-from .bootstrap_exclude \
           -avh --no-perms . ~;
-    if [ $SOURCE_ENV != "" ]; then
+    if [ $SOURCE_ENV ]; then
         rsync -avh --no-perms $SOURCE_ENV/ ~;
     fi;
     pip install --user -r requirements-user.txt
