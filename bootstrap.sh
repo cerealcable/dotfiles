@@ -30,6 +30,7 @@ function doIt() {
     fi;
     pip install --user -r requirements-user.txt
     source ~/.bash_profile;
+    tmux source-file ~/.tmux.conf \; display "Reloaded config";
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
