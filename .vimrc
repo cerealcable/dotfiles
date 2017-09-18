@@ -1,5 +1,11 @@
+" Plugins ------------------------------:
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 " Globals ------------------------------
 let mapleader="\\"          " leader is \
+" statusbar theme (airline)
+let g:airline_theme='wombat'
 syntax enable               " syntax processing
 set number                  " line numbering
 filetype indent on          " load filetype specific indent files
@@ -24,3 +30,4 @@ nnoremap <leader><space> :nohlsearch<CR>
 map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "   source vimrc
 map <leader>sv :source $MYVIMRC<CR>
+

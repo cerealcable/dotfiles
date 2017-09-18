@@ -20,7 +20,7 @@ while getopts ":e:" opt; do
   esac
 done
 
-git pull origin master;
+git pull --recurse-submodules origin master;
 
 function doIt() {
     rsync --exclude-from .bootstrap_exclude \
