@@ -31,3 +31,6 @@ map <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "   source vimrc
 map <leader>sv :source $MYVIMRC<CR>
 
+" Searching ----------------------------
+set tags=./tags,tags;       " set tags to recursively look for a tags folder
+nmap <F8> :TagbarToggle<CR> " toggle tagbar

@@ -7,3 +7,9 @@
 [submodule ".vim/bundle/vim-airline-themes"]
 	path = .vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule ".vim/bundle/auto-ctags.vim"]
+	path = .vim/bundle/auto-ctags.vim
+	url = https://github.com/soramugi/auto-ctags.vim.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
