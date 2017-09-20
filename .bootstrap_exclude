@@ -1,8 +1,7 @@
 bootstrap.sh
 .bootstrap_exclude
 .git/
-.DS_Store
-.osx
+.gitmodules
 README.md
 LICENSE-MIT.txt
 requirements-user.txt
