@@ -17,6 +17,7 @@ alias hm='history | grep make_image'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
+alias lla='ls -la'
 
 # grep
 alias egrep='egrep --color=auto'

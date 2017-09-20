@@ -24,7 +24,7 @@ git pull --recurse-submodules origin master;
 
 function doIt() {
     rsync --exclude-from .bootstrap_exclude \
-          -avh --no-perms . ~;
+          -avh --no-perms src/ ~;
     if [ $SOURCE_ENV ]; then
         rsync -avh --no-perms $SOURCE_ENV/ ~;
     fi;

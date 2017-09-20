@@ -1,15 +1,15 @@
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
+[submodule "src/.vim/bundle/vim-pathogen"]
+	path = src/.vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
+[submodule "src/.vim/bundle/vim-airline"]
+	path = src/.vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
-[submodule ".vim/bundle/vim-airline-themes"]
-	path = .vim/bundle/vim-airline-themes
+[submodule "src/.vim/bundle/vim-airline-themes"]
+	path = src/.vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule ".vim/bundle/auto-ctags.vim"]
-	path = .vim/bundle/auto-ctags.vim
+[submodule "src/.vim/bundle/auto-ctags.vim"]
+	path = src/.vim/bundle/auto-ctags.vim
 	url = https://github.com/soramugi/auto-ctags.vim.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
+[submodule "src/.vim/bundle/tagbar"]
+	path = src/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
