@@ -46,6 +46,7 @@ lxc-apt-update () {
 
 # Notify
 n() {
-    if [ -z "$1" ]; then msg="DONE"; else msg=$1; fi
-    notify-send -u critical '\n'$msg'\n'
+    if [ -z "$1" ]; then summary="DONE"; else summary=$1; fi
+    if [ -z "$2" ]; then body="We've done it!"; else body=$2; fi
+    notify-send -i dialog-information -u critical "$summary" "$body"
 }
