@@ -43,3 +43,9 @@ lxc-apt-update () {
         lxc exec $container -- /bin/bash -c "apt -qq -y clean";
     done
 }
+
+# Notify
+n() {
+    if [ -z "$1" ]; then msg="DONE"; else msg=$1; fi
+    notify-send -u critical '\n'$msg'\n'
+}
