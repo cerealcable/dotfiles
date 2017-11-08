@@ -16,3 +16,6 @@
 [submodule "src/.vim/bundle/yang.vim"]
 	path = src/.vim/bundle/yang.vim
 	url = https://github.com/nathanalderson/yang.vim.git
+[submodule "src/.vim/bundle/nerdtree"]
+	path = src/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
