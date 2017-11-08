@@ -44,3 +44,17 @@ map <F1> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+" Files --------------------------------
+" Put plugins and dictionaries in this dir
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+   let myUndoDir = expand(vimDir . '/undodir')
+   " Create dirs
+   call system('mkdir ' . vimDir)
+   call system('mkdir ' . myUndoDir)
+   let &undodir = myUndoDir
+   set undofile
+endif
