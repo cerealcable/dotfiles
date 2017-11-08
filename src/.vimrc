@@ -13,6 +13,7 @@ set wildmenu                " visual autocomplete
 set showmatch               " highlight matching [{()}]
 set incsearch               " search as characters typed
 set hlsearch                " highlight search matches
+set mouse=a                 " mouse!
 
 " Space & Tabs -------------------------
 set tabstop=4               " tab size
