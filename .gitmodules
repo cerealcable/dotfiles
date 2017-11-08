@@ -13,3 +13,6 @@
 [submodule "src/.vim/bundle/tagbar"]
 	path = src/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "src/.vim/bundle/yang.vim"]
+	path = src/.vim/bundle/yang.vim
+	url = https://github.com/nathanalderson/yang.vim.git
