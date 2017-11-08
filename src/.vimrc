@@ -34,3 +34,6 @@ map <leader>sv :source $MYVIMRC<CR>
 " Searching ----------------------------
 set tags=./tags,tags;       " set tags to recursively look for a tags folder
 nmap <F8> :TagbarToggle<CR> " toggle tagbar
+
+" Toggle between files
+nmap <C-e> :e#<CR>
