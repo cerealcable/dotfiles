@@ -37,3 +37,10 @@ nmap <F8> :TagbarToggle<CR> " toggle tagbar
 
 " Toggle between files
 nmap <C-e> :e#<CR>
+
+" NERDTree -----------------------------
+map <F1> :NERDTreeToggle<CR>
+" Use NERDTree if vim is opening directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
