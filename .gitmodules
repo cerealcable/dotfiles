@@ -22,3 +22,6 @@
 [submodule "src/.vim/bundle/vim-gitgutter"]
 	path = src/.vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "src/.vim/bundle/vim-rooter"]
+	path = src/.vim/bundle/vim-rooter
+	url = https://github.com/airblade/vim-rooter.git
