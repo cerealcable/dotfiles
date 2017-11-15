@@ -13,11 +13,10 @@ easy_install pip
 
 ```
 git clone https://github.com/morganhumes/dotfiles.git
-cd dotfiles
-./bootstrap.sh
+make -C dotfiles install
 ```
 
 
 ## Environments
 
-I wanted different environments based upon what kind of work I did, you can pass this information to via the -e flag via `bootstrap.sh -e <environtment_name>`
+I wanted different environments based upon what kind of work I did, you can do so with different targets as `make install-<environment>`.
