@@ -12,7 +12,7 @@ easy_install pip
 ## Installation
 
 ```
-git clone https://gitlab.com/cerealcable/dotfiles.git
+git clone https://github.com/morganhumes/dotfiles.git
 cd dotfiles
 ./bootstrap.sh
 ```
