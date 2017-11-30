@@ -7,6 +7,5 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 apt-get remove -y keepassx
-add-apt-repository -y ppa:phoerious/keepassxc
-apt-get update
+add-apt-repository -u -y ppa:phoerious/keepassxc
 apt-get install -y keepassxc
