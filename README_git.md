@@ -17,6 +17,8 @@
 [user]
     name = Morgan Humes
     email = morgan@lanaddict.com
+[core]
+    sshCommand = "ssh -i ~/.ssh/id_rsa_github_morganhumes"
 ```
 
 `~/.gitconfig-example-a`:
@@ -24,8 +26,6 @@
 [user]
     name = Morgan Humes
     email = morgan-a@example.com
-[core]
-    sshCommand = "ssh -i ~/.ssh/id_rsa_github_morganhumes"
 ```
 
 `~/.gitconfig-example-b`:
