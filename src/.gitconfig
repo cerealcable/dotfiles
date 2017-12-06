@@ -181,5 +181,6 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-[user]
-	name = Morgan Humes
+
+[include]
+  path = ~/.gitconfig-local
