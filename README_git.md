@@ -2,7 +2,7 @@
 
 `~/.gitconfig-local`:
 ```
-[includeIf "gitdir:~/dotfiles"]
+[includeIf "gitdir:~/dotfiles/"]
   path = ~/.gitconfig-personal
 
 [includeIf "gitdir:~/Projects/example-a/"]
