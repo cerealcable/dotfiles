@@ -50,3 +50,10 @@ n() {
     if [ -z "$2" ]; then body="We've done it!"; else body=$2; fi
     notify-send -i dialog-information -u critical "$summary" "$body"
 }
+
+# mkcdir
+mkcdir ()
+{
+    mkdir -p -- "$1" &&
+    cd -P -- "$1"
+}
