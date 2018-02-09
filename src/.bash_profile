@@ -115,6 +115,11 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
+# bash.d scripts
+if [ -d "$HOME/.bash.d" ] ; then
+    for f in $HOME/.bash.d/*; do source $f; done
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
