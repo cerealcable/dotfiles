@@ -18,7 +18,7 @@ pull:
 .PHONY: install
 install: pull build
 	rsync -avh --no-perms src/ ~;
-	pip install --user -r requirements-user.txt;
+	pip2 install --user -r requirements-user-2.txt;
 	pip3 install --user -r requirements-user-3.txt;
 
 .PHONY: $(ENV_TARGETS)
