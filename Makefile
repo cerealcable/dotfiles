@@ -24,7 +24,7 @@ install: pull build
 .PHONY: $(ENV_TARGETS)
 $(ENV_TARGETS): install
 	$(eval ENV := $(patsubst install-%,%,$@))
-	rsync -avh --no-perms envs/$(ENV) ~;
+	rsync -avh --no-perms envs/$(ENV)/ ~;
 	@if [ -e "envs/$(ENV)/requirements.txt" ]; then \
 		pip install --user -r envs/$(ENV)/requirements.txt; \
 	fi
