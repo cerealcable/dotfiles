@@ -1,2 +1,2 @@
-# vi mode!
-set -o vi
+# options
+set -o emacs
