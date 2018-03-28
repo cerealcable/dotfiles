@@ -37,3 +37,6 @@
 [submodule "src/.vim/bundle/vim-python-pep8-indent"]
 	path = src/.vim/bundle/vim-python-pep8-indent
 	url = https://github.com/Vimjas/vim-python-pep8-indent.git
+[submodule "src/.vim/bundle/Dockerfile.vim"]
+	path = src/.vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
