@@ -25,3 +25,6 @@
 [submodule "src/.vim/bundle/vim-rooter"]
 	path = src/.vim/bundle/vim-rooter
 	url = https://github.com/airblade/vim-rooter.git
+[submodule "src/.vim/bundle/editorconfig-vim"]
+	path = src/.vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
