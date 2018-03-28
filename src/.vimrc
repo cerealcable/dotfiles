@@ -8,7 +8,7 @@ let mapleader="\\"          " leader is \
 let g:airline_theme='wombat'
 syntax enable               " syntax processing
 set number                  " line numbering
-filetype indent on          " load filetype specific indent files
+filetype plugin indent on   " load filetype specific indent files
 set wildmenu                " visual autocomplete
 set showmatch               " highlight matching [{()}]
 set incsearch               " search as characters typed
@@ -44,6 +44,9 @@ map <F1> :NERDTreeToggle<CR>
 " Use NERDTree if vim is opening directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" vim-markdown -------------------------
+let g:vim_markdown_folding_disabled = 1
 
 " Files --------------------------------
 " Put plugins and dictionaries in this dir
