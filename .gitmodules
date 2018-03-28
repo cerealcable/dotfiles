@@ -28,3 +28,6 @@
 [submodule "src/.vim/bundle/editorconfig-vim"]
 	path = src/.vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "src/.vim/bundle/vim-markdown"]
+	path = src/.vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
