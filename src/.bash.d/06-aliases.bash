@@ -58,3 +58,8 @@ mkcdir ()
     mkdir -p -- "$1" &&
     cd -P -- "$1"
 }
+
+# Load additional aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
