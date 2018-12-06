@@ -40,3 +40,12 @@
 [submodule "src/.vim/bundle/Dockerfile.vim"]
 	path = src/.vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "src/.vim/bundle/vim-devicons"]
+	path = src/.vim/bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "src/.vim/bundle/fzf.vim"]
+	path = src/.vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "src/.vim/bundle/fzf"]
+	path = src/.vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.git
