@@ -27,3 +27,7 @@ $(ENV_TARGETS): install
 	@if [ -e "envs/$(ENV)/requirements.txt" ]; then \
 		pip install --user -r envs/$(ENV)/requirements.txt; \
 	fi
+
+.PHONY: system
+system:
+	ansible-playbook --connection=local --inventory=127.0.0.1,  --ask-become-pass site.yml

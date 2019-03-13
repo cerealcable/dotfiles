@@ -8,6 +8,16 @@ apt install gcc python-setuptools python-dev xclip exuberant-ctags
 easy_install pip
 ```
 
+## ArchLinux
+Using this on ArchLinux requires `yay` and `ansible-aur-git`
+```
+sudo pacman -S git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+yay -S ansible-aur-git
+```
+
 
 ## Installation
 

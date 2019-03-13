@@ -1,0 +1,9 @@
+---
+
+- name: Update system
+  hosts: all
+  become: false
+  roles:
+    - role: arch
+    - role: utils
+    - role: tmux

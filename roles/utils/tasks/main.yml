@@ -1,0 +1,23 @@
+---
+
+- name: Install utils
+  pacman:
+    name: "{{ item }}"
+  become: true
+  become_user: aur_builder
+  loop:
+    - chromium
+    - firefox
+    - flameshot
+    - keepassxc
+    - terminator
+    - tmux
+    - vim
+
+- name: Install AUR utils
+  aur:
+    name: "{{ item }}"
+  loop:
+    - discord
+    - slack-desktop
+    - tmuxinator

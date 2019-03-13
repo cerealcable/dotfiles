@@ -1,0 +1,8 @@
+---
+
+- name: Install tmux dependencies
+  aur:
+    name: "{{ item }}"
+  loop:
+    - fpp-git
+    - xsel
