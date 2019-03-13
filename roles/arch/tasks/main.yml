@@ -5,6 +5,7 @@
     name: aur_builder
     group: wheel
   become: true
+
 - name: AUR Builder - Sudo
   lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder

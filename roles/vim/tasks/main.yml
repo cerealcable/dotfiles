@@ -27,7 +27,7 @@
     dest: ~/.vim/indent/make.vim
 
 - name: vim plugins
-  git:
+  git: # noqa 401
     repo: "{{ item.url }}"
     dest: "~/.vim/bundle/{{ item.name }}"
     clone: true

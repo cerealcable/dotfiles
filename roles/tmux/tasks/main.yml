@@ -20,7 +20,7 @@
     state: directory
 
 - name: Update tmux plugin manager
-  git:
+  git: # noqa 401
     repo: https://github.com/tmux-plugins/tpm
     dest: ~/.tmux/plugins/tpm
     clone: true
