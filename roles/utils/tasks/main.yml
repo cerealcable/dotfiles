@@ -6,12 +6,12 @@
   become: true
   become_user: aur_builder
   loop:
+    - bat
     - chromium
     - firefox
     - flameshot
     - keepassxc
     - terminator
-    - tmux
     - vim
 
 - name: Install AUR utils
@@ -20,4 +20,3 @@
   loop:
     - discord
     - slack-desktop
-    - tmuxinator

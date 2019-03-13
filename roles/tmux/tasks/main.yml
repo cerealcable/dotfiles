@@ -1,8 +1,27 @@
 ---
 
-- name: Install tmux dependencies
+- name: Install tmux
   aur:
     name: "{{ item }}"
   loop:
+    - tmux
+    - tmuxinator
     - fpp-git
     - xsel
+
+- name: tmux.conf
+  template:
+    src: files/tmux.conf.j2
+    dest: ~/.tmux.conf
+
+- name: Create tmux plugin directory
+  file:
+    path: ~/.tmux/plugins/
+    state: directory
+
+- name: Update tmux plugin manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+    clone: true
+    update: true
