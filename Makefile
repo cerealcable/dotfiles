@@ -28,6 +28,16 @@ $(ENV_TARGETS): install
 		pip install --user -r envs/$(ENV)/requirements.txt; \
 	fi
 
+.vault_password:
+	@echo ""
+	@echo "Creating .vault_password file."
+	@echo ""
+	@echo " Supply the password for the Ansible Vault,"
+	@echo " it will be saved in this file, and used on repeated runs:"
+	@read -s VAULTPASSWORD; \
+	echo "$$VAULTPASSWORD" > .vault_password;
+	@echo ""
+
 .PHONY: system
-system:
+system: .vault_password
 	ansible-playbook --connection=local --inventory=127.0.0.1,  --ask-become-pass site.yml

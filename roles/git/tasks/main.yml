@@ -1,0 +1,38 @@
+---
+
+- name: gitignore
+  template:
+    src: files/git/gitignore.j2
+    dest: ~/.gitignore
+
+- name: gitconfig
+  template:
+    src: files/git/gitconfig.j2
+    dest: ~/.gitconfig
+
+- name: gitconfig-local dir
+  file:
+    path: ~/.gitconfig-local
+    state: directory
+
+- name: git local base config
+  template:
+    src: files/git/gitconfig-local-base.j2
+    dest: ~/.gitconfig-local/base
+
+- name: git local configs
+  template:
+    src: "{{ item }}"
+    dest: "~/.gitconfig-local/{{ item | basename | regex_replace('.j2','') }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0644
+  with_fileglob:
+    - ./files/git/gitconfig-local/*.j2
+
+- name: git local directors
+  file:
+    path: "~/Projects/{{ item | basename | regex_replace('.j2', '') }}"
+    state: directory
+  with_fileglob:
+    - ./files/git/gitconfig-local/*.j2

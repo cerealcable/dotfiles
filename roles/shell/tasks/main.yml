@@ -1,6 +1,6 @@
 ---
 
-- name: Bash configuration directory
+- name: bash.d dir
   file:
     path: ~/.bash.d
     state: directory
