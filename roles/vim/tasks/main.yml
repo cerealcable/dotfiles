@@ -1,0 +1,69 @@
+---
+
+- name: Install vim
+  pacman:
+    name: vim
+
+- name: vimrc
+  template:
+    src: files/vim/vimrc.j2
+    dest: ~/.vimrc
+
+- name: vim bundle dir
+  file:
+    path: ~/.vim/bundle
+    state: directory
+    recurse: yes
+
+- name: vim indent dir
+  file:
+    path: ~/.vim/indent
+    state: directory
+    recurse: yes
+
+- name: vim indent files
+  template:
+    src: files/vim/indent/make.vim.j2
+    dest: ~/.vim/indent/make.vim
+
+- name: vim plugins
+  git:
+    repo: "{{ item.url }}"
+    dest: "~/.vim/bundle/{{ item.name }}"
+    clone: true
+    update: true
+  with_items:
+    - name: vim-pathogen
+      url: https://github.com/tpope/vim-pathogen.git
+    - name: vim-airline
+      url: https://github.com/vim-airline/vim-airline.git
+    - name: vim-airline-themes
+      url: https://github.com/vim-airline/vim-airline-themes.git
+    - name: auto-ctags.vim
+      url: https://github.com/soramugi/auto-ctags.vim.git
+    - name: tagbar
+      url: https://github.com/majutsushi/tagbar.git
+    - name: yang.vim
+      url: https://github.com/nathanalderson/yang.vim.git
+    - name: nerdtree
+      url: https://github.com/scrooloose/nerdtree.git
+    - name: vim-gitgutter
+      url: https://github.com/airblade/vim-gitgutter.git
+    - name: vim-rooter
+      url: https://github.com/airblade/vim-rooter.git
+    - name: editorconfig-vim
+      url: https://github.com/editorconfig/editorconfig-vim.git
+    - name: vim-markdown
+      url: https://github.com/plasticboy/vim-markdown.git
+    - name: vim-js-indent
+      url: https://github.com/gavocanov/vim-js-indent.git
+    - name: vim-python-pep8-indent
+      url: https://github.com/Vimjas/vim-python-pep8-indent.git
+    - name: Dockerfile.vim
+      url: https://github.com/ekalinin/Dockerfile.vim.git
+    - name: vim-devicons
+      url: https://github.com/ryanoasis/vim-devicons.git
+    - name: fzf.vim
+      url: https://github.com/junegunn/fzf.vim.git
+    - name: fzf
+      url: https://github.com/junegunn/fzf.git

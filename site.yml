@@ -12,3 +12,4 @@
     - role: terminator
     - role: tmux
     - role: utils
+    - role: vim
