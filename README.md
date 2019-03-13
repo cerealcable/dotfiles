@@ -1,32 +1,38 @@
-# Morgan's Dotfiles
+Morgan's Ansible-Managed Dotfiles
+=================================
 
-The collection of dotfiles I've accumulated and tested and refined for my own use. My primary environment is Linux distro's but generally these could be used in other scenarios.
+The collection of dotfiles I've accumulated and tested and refined for my own use. All packaged up with Ansible so that all my homes can be the same. Currently I'm using ArchLinux and this repo is probably too specific to pacman and its helpers.
 
 ## Dependencies
-```
-apt install gcc python-setuptools python-dev xclip exuberant-ctags
-easy_install pip
-```
+Using this on requires...
+ * `ansible-aur-git`
+ * `ansible`
+ * `make`
+ * `git`
+ * `yay`
 
-## ArchLinux
-Using this on ArchLinux requires `yay` and `ansible-aur-git`
-```
-sudo pacman -S git
+Super easy example:
+```shell
+# pacman deps
+sudo pacman -S ansible git make
+
+# yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+# yay deps
 yay -S ansible-aur-git
+
+# this repo!
+git clone https://github.com/cerealcable/dotfiles.git
+make -C dotfiles local
 ```
 
+## License
+This repository is licensed under the [MIT License](LICENSE).
 
-## Installation
+## Inspirations
+People around me generally give decent ideas and inspiration, so here's a list of people you should check out!
 
-```
-git clone https://github.com/morganhumes/dotfiles.git
-make -C dotfiles install
-```
-
-
-## Environments
-
-I wanted different environments based upon what kind of work I did, you can do so with different targets as `make install-<environment>`.
+* [@wastrachan](https://github.com/wastrachan/dotfiles)
