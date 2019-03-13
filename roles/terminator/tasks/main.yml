@@ -1,0 +1,21 @@
+---
+
+- name: Install terminator
+  pacman:
+    name: terminator
+  become: true
+  become_user: aur_builder
+
+- name: terminator config dir
+  file:
+    path: ~/.config/terminator
+    state: directory
+
+- name: terminator config
+  template:
+    src: files/terminator/config.j2
+    dest: "~/.config/terminator/config"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0644
+

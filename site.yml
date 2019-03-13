@@ -6,5 +6,6 @@
   roles:
     - role: arch
     - role: shell
+    - role: terminator
     - role: tmux
     - role: utils

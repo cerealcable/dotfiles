@@ -11,7 +11,6 @@
     - firefox
     - flameshot
     - keepassxc
-    - terminator
     - vim
 
 - name: Install AUR utils
