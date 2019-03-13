@@ -7,7 +7,7 @@
 
 - name: bashrc
   template:
-    src: files/bashrc.j2
+    src: files/bash/bashrc.j2
     dest: "~/.bashrc"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
@@ -15,7 +15,7 @@
 
 - name: bash_profile
   template:
-    src: files/bash_profile.j2
+    src: files/bash/bash_profile.j2
     dest: "~/.bash_profile"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
@@ -23,7 +23,7 @@
 
 - name: bash_local
   template:
-    src: files/bash_local.j2
+    src: files/bash/bash_local.j2
     dest: "~/.bash_local"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
