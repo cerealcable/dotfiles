@@ -1,2 +1,0 @@
-# options
-set -o emacs

@@ -1,0 +1,40 @@
+---
+
+- name: Bash configuration directory
+  file:
+    path: ~/.bash.d
+    state: directory
+
+- name: bashrc
+  template:
+    src: files/bashrc.j2
+    dest: "~/.bashrc"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0644
+
+- name: bash_profile
+  template:
+    src: files/bash_profile.j2
+    dest: "~/.bash_profile"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0644
+
+- name: bash_local
+  template:
+    src: files/bash_local.j2
+    dest: "~/.bash_local"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0644
+
+- name: bash configs
+  template:
+    src: "{{ item }}"
+    dest: "~/.bash.d/{{ item | basename | regex_replace('.j2','') }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0644
+  with_fileglob:
+    - ./files/bash.d/*.j2
