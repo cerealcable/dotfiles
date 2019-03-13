@@ -49,6 +49,3 @@
 [submodule "src/.vim/bundle/fzf"]
 	path = src/.vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
-[submodule "src/.tmux/plugins/tpm"]
-	path = src/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
