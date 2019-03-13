@@ -12,5 +12,5 @@
     - role: shell
     - role: terminator
     - role: tmux
-    - role: utils
+    - role: packages
     - role: vim
