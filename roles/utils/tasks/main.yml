@@ -11,6 +11,7 @@
     - firefox
     - flameshot
     - keepassxc
+    - picocom
     - vim
 
 - name: Install AUR utils
