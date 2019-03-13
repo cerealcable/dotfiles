@@ -23,6 +23,6 @@ install-hooks:
 lint:
 	ansible-lint site.yml
 
-.PHONY: system
-system: .vault_password
+.PHONY: local
+local: .vault_password
 	ansible-playbook --connection=local --inventory=127.0.0.1,  --ask-become-pass site.yml
