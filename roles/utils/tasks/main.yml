@@ -20,4 +20,5 @@
     name: "{{ item }}"
   loop:
     - discord
+    - docker-bin
     - slack-desktop
