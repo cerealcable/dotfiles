@@ -8,6 +8,7 @@
   roles:
     - role: arch
     - role: git
+    - role: dotfiles
     - role: shell
     - role: terminator
     - role: tmux

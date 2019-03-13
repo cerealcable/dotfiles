@@ -1,5 +1,11 @@
 ---
 
+- name: Install git
+  pacman:
+    name: git
+  become: true
+  become_user: root
+
 - name: gitignore
   template:
     src: files/git/gitignore.j2
