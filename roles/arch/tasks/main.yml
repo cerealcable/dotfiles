@@ -1,5 +1,11 @@
 ---
 
+- name: Expect
+  pacman:
+    name: expect
+  become: true
+  tags: always
+
 - name: AUR Builder - User
   user:
     name: aur_builder
