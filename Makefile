@@ -25,4 +25,4 @@ lint:
 
 .PHONY: local
 local: .vault_password
-	ansible-playbook --connection=local --inventory=127.0.0.1,  --ask-become-pass site.yml
+	ANSIBLE_FILTER_PLUGINS=./filter_plugins ansible-playbook --connection=local --inventory=127.0.0.1, --ask-become-pass -t always -t ${TAGS} site.yml

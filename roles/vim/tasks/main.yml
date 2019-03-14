@@ -3,28 +3,33 @@
 - name: Install vim
   pacman:
     name: vim
+  tags: always
 
 - name: vimrc
   template:
     src: files/vim/vimrc.j2
     dest: ~/.vimrc
+  tags: always
 
 - name: vim bundle dir
   file:
     path: ~/.vim/bundle
     state: directory
     recurse: yes
+  tags: always
 
 - name: vim indent dir
   file:
     path: ~/.vim/indent
     state: directory
     recurse: yes
+  tags: always
 
 - name: vim indent files
   template:
     src: files/vim/indent/make.vim.j2
     dest: ~/.vim/indent/make.vim
+  tags: always
 
 - name: vim plugins
   git: # noqa 401
@@ -67,3 +72,4 @@
       url: https://github.com/junegunn/fzf.vim.git
     - name: fzf
       url: https://github.com/junegunn/fzf.git
+  tags: always

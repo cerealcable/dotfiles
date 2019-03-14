@@ -5,3 +5,4 @@
     repo: git@github.com:cerealcable/dotfiles.git
     dest: ~/Projects/cerealcable/dotfiles
     update: yes
+  tags: always

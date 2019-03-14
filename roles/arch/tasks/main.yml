@@ -5,6 +5,7 @@
     name: aur_builder
     group: wheel
   become: true
+  tags: always
 
 - name: AUR Builder - Sudo
   lineinfile:
@@ -13,3 +14,4 @@
     create: yes
     validate: 'visudo -cf %s'
   become: true
+  tags: always

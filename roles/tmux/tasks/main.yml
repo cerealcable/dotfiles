@@ -8,16 +8,19 @@
     - tmuxinator
     - fpp-git
     - xsel
+  tags: always
 
 - name: tmux.conf
   template:
     src: files/tmux.conf.j2
     dest: ~/.tmux.conf
+  tags: always
 
 - name: Create tmux plugin directory
   file:
     path: ~/.tmux/plugins/
     state: directory
+  tags: always
 
 - name: Update tmux plugin manager
   git: # noqa 401
@@ -25,3 +28,4 @@
     dest: ~/.tmux/plugins/tpm
     clone: true
     update: true
+  tags: always

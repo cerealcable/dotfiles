@@ -5,11 +5,13 @@
     name: terminator
   become: true
   become_user: aur_builder
+  tags: always
 
 - name: terminator config dir
   file:
     path: ~/.config/terminator
     state: directory
+  tags: always
 
 - name: terminator config
   template:
@@ -18,4 +20,5 @@
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
     mode: 0644
+  tags: always
 
