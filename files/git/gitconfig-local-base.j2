@@ -1,6 +1,5 @@
-[includeIf "gitdir:~/Projects/adtran/**"]
-  path = ~/.gitconfig-local/adtran
+{% for name in configs %}
+[includeIf "gitdir:~/Projects/{{ name }}/**"]
+  path = ~/.gitconfig-local/{{ name }}
 
-[includeIf "gitdir:~/Projects/cerealcable/**"]
-  path = ~/.gitconfig-local/cerealcable
-
+{% endfor %}

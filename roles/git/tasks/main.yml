@@ -25,20 +25,23 @@
   template:
     src: files/git/gitconfig-local-base.j2
     dest: ~/.gitconfig-local/base
+  vars:
+    configs: "{{ gitconfigs }}"
+
+- name: git local dirs
+  file:
+    path: "~/Projects/{{ item.key }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+  with_dict: "{{ gitconfigs }}"
 
 - name: git local configs
   template:
-    src: "{{ item }}"
-    dest: "~/.gitconfig-local/{{ item | basename | regex_replace('.j2','') }}"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
-    mode: 0644
-  with_fileglob:
-    - ./files/git/gitconfig-local/*.j2
-
-- name: git local directors
-  file:
-    path: "~/Projects/{{ item | basename | regex_replace('.j2', '') }}"
-    state: directory
-  with_fileglob:
-    - ./files/git/gitconfig-local/*.j2
+    src: files/git/gitconfig-local.j2
+    dest: "~/.gitconfig-local/{{ item.key }}"
+  vars:
+    name: "{{ item.key }}"
+    config: "{{ item.value }}"
+  with_dict: "{{ gitconfigs }}"

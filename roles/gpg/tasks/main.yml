@@ -1,0 +1,21 @@
+---
+
+- name: GPG Import Directory
+  file:
+    path: "~/.gpg-import"
+    state: directory
+    mode: 0750
+
+- name: Copy keys
+  shell: "echo -e \"{{ item.key }}\" | tr -d ' ' | base64 -d > ~/.gpg-import/{{ item.id }}.priv"
+  with_items: "{{ gpg_keys }}"
+
+- name: Import GPG Keys
+  shell: "gpg --allow-secret-key-import --import ~/.gpg-import/{{ item.id }}.priv"
+  with_items: "{{ gpg_keys }}"
+  changed_when: output is defined and output.stdout != ""
+
+- name: Delete Import Directory
+  file:
+    path: "~/.gpg-import"
+    state: absent

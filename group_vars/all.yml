@@ -1,3 +1,12 @@
 ---
 
-git_name: Morgan Humes
+default_git_name: Morgan Humes
+default_git_email: morgan@lanaddict.com
+
+#gitconfigs:
+#  example:
+#    git_name: Morgan Config 1
+#    git_email: morgan@example.com
+#  example2:
+#    git_name: Morgan Config 2
+#    git_email: morgan@other.com
