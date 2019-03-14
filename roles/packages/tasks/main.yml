@@ -10,6 +10,7 @@
     - ansible-lint
     - bat
     - chromium
+    - docker
     - firefox
     - flameshot
     - keepassxc
@@ -20,5 +21,4 @@
     name: "{{ item }}"
   loop:
     - discord
-    - docker
     - slack-desktop
