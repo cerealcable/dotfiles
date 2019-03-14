@@ -8,10 +8,12 @@
 
 - name: Copy keys
   shell: "echo -e \"{{ item.key }}\" | tr -d ' ' | base64 -d > ~/.gpg-import/{{ item.id }}.priv"
+  no_log: True
   with_items: "{{ gpg_keys }}"
 
 - name: Import GPG Keys
   shell: "gpg --allow-secret-key-import --import ~/.gpg-import/{{ item.id }}.priv"
+  no_log: True
   with_items: "{{ gpg_keys }}"
   changed_when: output is defined and output.stdout != ""
 
