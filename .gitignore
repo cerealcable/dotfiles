@@ -1,1 +1,8 @@
+# Ansible
 .vault_password
+*.retry
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
