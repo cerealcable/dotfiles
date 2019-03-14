@@ -27,6 +27,14 @@ bind c new-window -c '#{pane_current_path}'
 # don't rename windows automatically
 set-option -g allow-rename off
 
+# quick pane cycling
+unbind A
+bind A select-pane -t :.+
+
+# select next window
+unbind Space
+bind Space select-window -n
+
 # reload tmux configuration with <prefix> r
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
