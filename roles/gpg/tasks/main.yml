@@ -2,4 +2,5 @@
 
 - name: Import GPG Keys
   shell: "echo -e '{{ item.key }}' | gpg --import"
+  no_log: True
   with_items: "{{ gpg_keys }}"
