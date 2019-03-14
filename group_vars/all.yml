@@ -10,3 +10,21 @@ default_git_email: morgan@lanaddict.com
 #  example2:
 #    git_name: Morgan Config 2
 #    git_email: morgan@other.com
+
+
+#gpg_keys:
+#  - comment: morgan@example.com
+#    id: <KEY-ID-HERE>
+#    key: |
+#      -----BEGIN PGP PRIVATE KEY BLOCK-----
+#
+#      <KEY-DATA-HERE>
+#      -----END PGP PRIVATE KEY BLOCK-----
+#
+#  - comment: morgan@other.com
+#    id: <KEY-ID-HERE>
+#    key: |
+#      -----BEGIN PGP PRIVATE KEY BLOCK-----
+#
+#      <KEY-DATA-HERE>
+#      -----END PGP PRIVATE KEY BLOCK-----
