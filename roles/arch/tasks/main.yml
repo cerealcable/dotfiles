@@ -6,10 +6,28 @@
   become: true
   tags: always
 
+- name: AUR Builder - User Info
+  shell: pinky -l aur_builder
+  register: aur_builder_info
+  changed_when: False
+  tags: always
+
 - name: AUR Builder - User
   user:
     name: aur_builder
-    group: wheel
+    state: absent
+  become: true
+  when: '"/bin/nologin" not in aur_builder_info.stdout'
+  tags: always
+
+- name: AUR Builder - User
+  user:
+    name: aur_builder
+    groups: wheel
+    create_home: yes
+    shell: /bin/nologin
+    system: yes
+    state: present
   become: true
   tags: always
 
