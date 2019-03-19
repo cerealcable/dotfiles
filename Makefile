@@ -1,3 +1,4 @@
+ANSIBLE_PLAYBOOK = ANSIBLE_FILTER_PLUGINS=./filter_plugins ansible-playbook
 HOOKS := $(shell find .git_hooks -type f -execdir basename {} \;)
 PREFIX_TAGS = $(addprefix -t , ${TAGS})
 
@@ -26,4 +27,10 @@ lint:
 
 .PHONY: local
 local: .vault_password
-	ANSIBLE_FILTER_PLUGINS=./filter_plugins ansible-playbook --connection=local --inventory=127.0.0.1, --ask-become-pass -t always ${PREFIX_TAGS} site.yml
+	${ANSIBLE_PLAYBOOK} --connection=local --inventory=127.0.0.1, --ask-become-pass -t always ${PREFIX_TAGS} site.yml
+
+.PHONY: remote
+remote: .vault_password
+	@echo "Enter remote host to deploy dev dotfiles to:"
+	@read REMOTE_HOST; \
+	${ANSIBLE_PLAYBOOK} --inventory=$$REMOTE_HOST, --ask-become-pass -t always ${PREFIX_TAGS} site.yml
