@@ -37,8 +37,8 @@
   file:
     path: "~/Projects/{{ item.key }}"
     state: directory
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
     mode: 0755
   with_dict: "{{ gitconfigs | filter_tags }}"
   tags: always
