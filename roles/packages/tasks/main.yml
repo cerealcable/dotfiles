@@ -22,5 +22,6 @@
     name: "{{ item }}"
   loop:
     - discord
+    - dropbox
     - slack-desktop
   tags: always
