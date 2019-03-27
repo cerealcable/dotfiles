@@ -7,10 +7,10 @@
     - group_vars/vault.yml
   roles:
     - role: arch
-    - role: gpg
-    - role: git
-    - role: dotfiles
     - role: shell
     - role: tmux
     - role: packages
     - role: vim
+    - role: gpg
+    - role: git
+    - role: dotfiles
