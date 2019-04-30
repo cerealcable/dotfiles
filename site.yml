@@ -3,8 +3,6 @@
 - name: Update system
   hosts: all
   become: false
-  vars_files:
-    - group_vars/vault.yml
   roles:
     - role: arch
     - role: shell

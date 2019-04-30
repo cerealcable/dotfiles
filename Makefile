@@ -1,6 +1,9 @@
 ANSIBLE_PLAYBOOK = ANSIBLE_FILTER_PLUGINS=./filter_plugins ansible-playbook
 HOOKS := $(shell find .git_hooks -type f -execdir basename {} \;)
 PREFIX_TAGS = $(addprefix -t , ${TAGS})
+EXTRA_VARS := "@group_vars/vault-default.yml"
+PREFIX_EXTRA_VARS += $(addprefix --extra-vars , ${EXTRA_VARS})
+PLAYBOOK = "site.yml"
 
 install-hooks:
 	@for hook in "$(HOOKS)"; \
@@ -27,10 +30,10 @@ lint:
 
 .PHONY: local
 local: .vault_password
-	${ANSIBLE_PLAYBOOK} --connection=local --inventory=127.0.0.1, --ask-become-pass -t always ${PREFIX_TAGS} site.yml
+	${ANSIBLE_PLAYBOOK} --connection=local --inventory=127.0.0.1, --ask-become-pass -t always ${PREFIX_TAGS} ${PREFIX_EXTRA_VARS} ${PLAYBOOK}
 
 .PHONY: remote
 remote: .vault_password
 	@echo "Enter remote host to deploy dev dotfiles to:"
 	@read REMOTE_HOST; \
-	${ANSIBLE_PLAYBOOK} --inventory=$$REMOTE_HOST, --ask-become-pass -t always ${PREFIX_TAGS} site.yml
+	${ANSIBLE_PLAYBOOK} --inventory=$$REMOTE_HOST, --ask-become-pass -t always ${PREFIX_TAGS} ${PREFIX_EXTRA_VARS} ${PLAYBOOK}
