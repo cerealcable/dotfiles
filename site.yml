@@ -4,11 +4,7 @@
   hosts: all
   become: false
   roles:
-    - role: arch
     - role: shell
     - role: tmux
-    - role: packages
     - role: vim
-    - role: gpg
     - role: git
-    - role: dotfiles

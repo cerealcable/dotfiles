@@ -1,15 +1,5 @@
 ---
 
-- name: Install tmux
-  aur:
-    name: "{{ item }}"
-  loop:
-    - tmux
-    - tmuxinator
-    - fpp-git
-    - xsel
-  tags: always
-
 - name: tmux.conf
   template:
     src: files/tmux.conf.j2

@@ -1,8 +1,0 @@
-# {{ ansible_managed }}
-
-[user]
-    name = {{ config.git_name | default(default_git_name) }}
-    email = {{ config.git_email | default(default_git_email) }}
-{% if config.git_signing_key %}
-    signingkey = {{ config.git_signing_key }}
-{% endif %}

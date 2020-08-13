@@ -1,10 +1,5 @@
 ---
 
-- name: Install vim
-  pacman:
-    name: vim
-  tags: always
-
 - name: vimrc
   template:
     src: files/vim/vimrc.j2

@@ -1,12 +1,5 @@
 ---
 
-- name: Install git
-  pacman:
-    name: git
-  become: true
-  become_user: root
-  tags: always
-
 - name: gitignore
   template:
     src: files/git/gitignore.j2
@@ -17,38 +10,4 @@
   template:
     src: files/git/gitconfig.j2
     dest: ~/.gitconfig
-  tags: always
-
-- name: gitconfig-local dir
-  file:
-    path: ~/.gitconfig-local
-    state: directory
-  tags: always
-
-- name: git local base config
-  template:
-    src: files/git/gitconfig-local-base.j2
-    dest: ~/.gitconfig-local/base
-  vars:
-    configs: "{{ gitconfigs | filter_tags }}"
-  tags: always
-
-- name: git local dirs
-  file:
-    path: "~/Projects/{{ item.key }}"
-    state: directory
-    owner: "{{ username }}"
-    group: "{{ username }}"
-    mode: 0755
-  with_dict: "{{ gitconfigs | filter_tags }}"
-  tags: always
-
-- name: git local configs
-  template:
-    src: files/git/gitconfig-local.j2
-    dest: "~/.gitconfig-local/{{ item.key }}"
-  vars:
-    name: "{{ item.key }}"
-    config: "{{ item.value }}"
-  with_dict: "{{ gitconfigs | filter_tags }}"
   tags: always

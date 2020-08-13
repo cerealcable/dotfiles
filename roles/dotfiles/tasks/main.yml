@@ -1,9 +1,0 @@
----
-
-- name: dotfiles repository
-  git: # noqa 401
-    repo: git@github.com:cerealcable/dotfiles.git
-    dest: ~/Projects/cerealcable/dotfiles
-    update: yes
-    accept_hostkey: yes
-  tags: always
