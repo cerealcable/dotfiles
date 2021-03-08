@@ -10,8 +10,8 @@
   template:
     src: files/bash/bashrc.j2
     dest: "~/.bashrc"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
     mode: 0644
   tags: always
 
@@ -19,8 +19,8 @@
   template:
     src: files/bash/bash_profile.j2
     dest: "~/.bash_profile"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
     mode: 0644
   tags: always
 
@@ -28,8 +28,8 @@
   template:
     src: files/bash/bash_local.j2
     dest: "~/.bash_local"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
     mode: 0644
   tags: always
 
@@ -37,8 +37,8 @@
   template:
     src: "{{ item }}"
     dest: "~/.bash.d/{{ item | basename | regex_replace('.j2','') }}"
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
     mode: 0644
   with_fileglob:
     - ./files/bash.d/*.j2
