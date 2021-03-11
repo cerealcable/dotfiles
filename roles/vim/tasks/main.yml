@@ -39,8 +39,6 @@
       url: https://github.com/vim-airline/vim-airline.git
     - name: vim-airline-themes
       url: https://github.com/vim-airline/vim-airline-themes.git
-    - name: auto-ctags.vim
-      url: https://github.com/soramugi/auto-ctags.vim.git
     - name: tagbar
       url: https://github.com/majutsushi/tagbar.git
     - name: yang.vim
